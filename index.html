@@ -41,7 +41,6 @@
   .xhs-btn { display:inline-flex; align-items:center; gap:8px; background:#FF2442; color:#fff; border:none; border-radius:24px; padding:12px 28px; font-size:14px; font-weight:700; cursor:pointer; letter-spacing:1px; }
   .xhs-dot { width:8px; height:8px; background:#fff; border-radius:50%; }
   .footer { text-align:center; padding:20px; font-size:11px; color:#bbb; letter-spacing:1px; }
-  .tag { display:inline-block; background:#fff0f2; color:#FF2442; border-radius:4px; font-size:11px; padding:2px 6px; margin-top:6px; }
 </style>
 </head>
 <body>
@@ -54,14 +53,12 @@
   <div class="reward-badge">发小红书 立减 <span class="reward-num">¥30</span></div>
 </div>
 
-<!-- 展厅照片 -->
 <div class="section">
   <div class="section-title">01 · 长按保存这3张图</div>
   <div class="photos" id="photoGrid"></div>
   <div class="photo-hint">长按图片 → 保存到相册 · 每次随机组合</div>
 </div>
 
-<!-- 文案 -->
 <div class="section">
   <div class="section-title">02 · 一键复制文案（直接粘贴到小红书）</div>
   <div class="copy-block">
@@ -72,7 +69,6 @@
   </div>
 </div>
 
-<!-- 步骤 -->
 <div class="section">
   <div class="section-title">03 · 发布要求</div>
   <div class="steps">
@@ -83,7 +79,6 @@
   </div>
 </div>
 
-<!-- 微信 -->
 <div class="section">
   <div class="section-title">04 · 加微信 · 每日新款推送</div>
   <div class="wechat-block">
@@ -93,7 +88,6 @@
   <div class="wechat-hint">复制后打开微信 → 搜索 → 粘贴添加</div>
 </div>
 
-<!-- 小红书 -->
 <div class="section">
   <div class="section-title">05 · 关注我们的小红书</div>
   <div class="xhs-block">
@@ -105,7 +99,6 @@
 <div class="footer">S1OR1 · 杭州工厂直销女装<br>每位顾客每次购物限享一次</div>
 
 <script>
-// ── 图片池（3张，随机排列顺序）──
 const IMGS = [
   'https://i.ibb.co/LzGhpBjR/Wechat-IMG389.jpg',
   'https://i.ibb.co/Z1KQZw73/Wechat-IMG391.jpg',
@@ -114,7 +107,6 @@ const IMGS = [
   'https://i.ibb.co/yBZ7v9x8/Wechat-IMG394.jpg'
 ];
 
-// ── 文案池（5套，角度各异）──
 const COPIES = [
   `在杭州逛到一家宝藏工厂店，S1OR1，完全不像这个价位的质感！
 
@@ -178,7 +170,7 @@ function pickCopy(exclude) {
 function renderPhotos() {
   const grid = document.getElementById('photoGrid');
   grid.innerHTML = '';
-  shuffle(IMGS).forEach(src => {
+  shuffle(IMGS).slice(0, 3).forEach(src => {
     const img = document.createElement('img');
     img.src = src;
     img.alt = 'S1OR1展厅';
@@ -231,7 +223,6 @@ function openXHS() {
   setTimeout(() => { window.location.href = 'https://www.xiaohongshu.com/search_result?keyword=拓然服饰'; }, 800);
 }
 
-// 初始化
 curCopyIdx = pickCopy(-1);
 renderPhotos();
 renderCopy(curCopyIdx);

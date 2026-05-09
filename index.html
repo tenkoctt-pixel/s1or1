@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;S1OR1 · 发小红书领优惠&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>body { font-family:-apple-system,'PingFang SC',sans-serif; background:#f5f4f0; color:#1a1a1a; min-height:100vh; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.top-bar { background:#1a1a1a; color:#fff; text-align:center; padding:10px; font-size:12px; letter-spacing:3px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero { background:#fff; padding:28px 20px 20px; text-align:center; border-bottom:1px solid #ebebeb; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.store-name { font-size:22px; font-weight:700; letter-spacing:4px; margin-bottom:4px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.store-sub { font-size:12px; color:#888; letter-spacing:2px; margin-bottom:20px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.reward-badge { display:inline-flex; align-items:center; gap:8px; background:#FF2442; color:#fff; border-radius:40px; padding:10px 24px; font-size:15px; font-weight:700; letter-spacing:1px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.reward-num { font-size:28px; font-weight:900; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.section { background:#fff; margin:10px 16px; border-radius:14px; overflow:hidden; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.section-title { font-size:11px; color:#888; letter-spacing:3px; padding:16px 16px 8px; border-bottom:1px solid #f0f0f0; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.photos { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.photos img { width:100%; aspect-ratio:3/4; object-fit:cover; display:block; background:#eee; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.photo-hint { font-size:11px; color:#aaa; text-align:center; padding:10px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.copy-block { padding:14px 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.copy-text { font-size:14px; line-height:1.85; color:#333; background:#f8f7f4; border-radius:10px; padding:14px; border-left:3px solid #FF2442; white-space:pre-wrap; word-break:break-all; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.char-count { font-size:11px; color:#aaa; text-align:right; margin-top:6px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.copy-btn { width:100%; margin-top:12px; padding:14px; background:#FF2442; color:#fff; border:none; border-radius:10px; font-size:15px; font-weight:700; letter-spacing:2px; cursor:pointer; transition:opacity .15s; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.copy-btn:active { opacity:0.8; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.copy-btn.done { background:#4caf50; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.refresh-btn { width:100%; margin-top:8px; padding:10px; background:transparent; color:#aaa; border:1px solid #e0e0e0; border-radius:10px; font-size:13px; cursor:pointer; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.steps { padding:12px 16px 16px; display:flex; flex-direction:column; gap:10px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.step { display:flex; align-items:flex-start; gap:12px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.step-num { min-width:24px; height:24px; background:#1a1a1a; color:#fff; border-radius:50%; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.step-body { flex:1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.step-title { font-size:14px; font-weight:600; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.step-desc { font-size:12px; color:#888; margin-top:2px; line-height:1.5; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.step-warn { font-size:11px; color:#FF2442; margin-top:3px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.wechat-block { padding:16px; display:flex; align-items:center; justify-content:space-between; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.wechat-id { font-size:20px; font-weight:700; letter-spacing:2px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.wechat-copy { padding:8px 18px; background:#07C160; color:#fff; border:none; border-radius:20px; font-size:13px; font-weight:600; cursor:pointer; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.wechat-copy.done { background:#4caf50; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.wechat-hint { font-size:11px; color:#aaa; padding:0 16px 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.xhs-block { padding:14px 16px 16px; text-align:center; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.xhs-btn { display:inline-flex; align-items:center; gap:8px; background:#FF2442; color:#fff; border:none; border-radius:24px; padding:12px 28px; font-size:14px; font-weight:700; cursor:pointer; letter-spacing:1px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.xhs-dot { width:8px; height:8px; background:#fff; border-radius:50%; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.footer { text-align:center; padding:20px; font-size:11px; color:#bbb; letter-spacing:1px; }</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="top-bar"&gt;工厂直销 · 杭州 · 好面料平价格&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="store-name"&gt;S1OR1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="store-sub"&gt;FACTORY STORE · HANGZHOU&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="reward-badge"&gt;发小红书 立减 &lt;span class="reward-num"&gt;¥30&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;01 · 长按保存这3张图&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="photos" id="photoGrid"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="photo-hint"&gt;长按图片 → 保存到相册 · 每次随机组合&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;02 · 一键复制文案（直接粘贴到小红书）&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="copy-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="copy-text" id="copyText"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="char-count" id="charCount"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="copy-btn" id="copyBtn" onclick="doCopy()"&gt;复制文案&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="refresh-btn" onclick="refresh()"&gt;🔀 换一篇文案&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;03 · 发布要求&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="steps"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step"&gt;&lt;div class="step-num"&gt;1&lt;/div&gt;&lt;div class="step-body"&gt;&lt;div class="step-title"&gt;上传刚才保存的3张图&lt;/div&gt;&lt;div class="step-desc"&gt;也可以在店内自拍&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step"&gt;&lt;div class="step-num"&gt;2&lt;/div&gt;&lt;div class="step-body"&gt;&lt;div class="step-title"&gt;粘贴复制好的文案&lt;/div&gt;&lt;div class="step-warn"&gt;⚠ 正文需50字以上，仅配图不算&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step"&gt;&lt;div class="step-num"&gt;3&lt;/div&gt;&lt;div class="step-body"&gt;&lt;div class="step-title"&gt;添加定位"S1OR1"&lt;/div&gt;&lt;div class="step-desc"&gt;搜索店名定位到本店&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step"&gt;&lt;div class="step-num"&gt;4&lt;/div&gt;&lt;div class="step-body"&gt;&lt;div class="step-title"&gt;设为公开发布后出示给店员&lt;/div&gt;&lt;div class="step-desc"&gt;当场减¥30，核销后不可撤回&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;04 · 加微信 · 每日新款推送&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wechat-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;&lt;div style="font-size:12px;color:#888;margin-bottom:4px;"&gt;微信号&lt;/div&gt;&lt;div class="wechat-id"&gt;s1or1-01&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="wechat-copy" id="wxBtn" onclick="copyWX()"&gt;复制微信号&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wechat-hint"&gt;复制后打开微信 → 搜索 → 粘贴添加&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;05 · 关注我们的小红书&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="xhs-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="xhs-btn" onclick="openXHS()"&gt;&lt;span class="xhs-dot"&gt;&lt;/span&gt;搜索「拓然服饰」关注我们&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="font-size:11px;color:#aaa;margin-top:10px;"&gt;每天上新 · 工厂直播 · 穿搭分享&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="footer"&gt;S1OR1 · 杭州工厂直销女装&lt;br&gt;每位顾客每次购物限享一次&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">const IMGS = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>'https://i.ibb.co/LzGhpBjR/Wechat-IMG389.jpg',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>'https://i.ibb.co/Z1KQZw73/Wechat-IMG391.jpg',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>'https://i.ibb.co/8Ldv2RS0/Wechat-IMG392.jpg',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>'https://i.ibb.co/1fSdkgZM/Wechat-IMG393.jpg',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>'https://i.ibb.co/yBZ7v9x8/Wechat-IMG394.jpg'</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">const COPIES = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>`在杭州逛到一家宝藏工厂店，S1OR1，完全不像这个价位的质感！</p>
+<p class="p2"><br></p>
+<p class="p1">全是工厂直销，桑蚕丝、醋酸、亚麻、匹马棉，每一件摸起来都很扎实。桑蚕丝上衣均价两三百，裤子一百多，真的比商场同款面料便宜太多了。</p>
+<p class="p2"><br></p>
+<p class="p1">款式偏通勤休闲，版型很正，30+的姐妹穿上去很有气质。每天都有新品上架，喜欢好面料平价格的一定要来！</p>
+<p class="p2"><br></p>
+<p class="p1">#杭州女装 #工厂直销 #S1OR1 #通勤穿搭 #平价好物`,</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>`终于找到一家面料认真的工厂直销店！杭州 S1OR1 安利给大家</p>
+<p class="p2"><br></p>
+<p class="p1">不是那种廉价批发货，主打高端面料平价卖——桑蚕丝、匹马棉、醋酸、亚麻，每个品类面料都很讲究。价格却很实在，丝质上衣两三百就能拿下，比同材质品牌划算太多。</p>
+<p class="p2"><br></p>
+<p class="p1">逛下来发现款式也很多，每天上新，通勤上班穿特别合适，版型显瘦，气质感很强。强烈推荐！</p>
+<p class="p2"><br></p>
+<p class="p1">#S1OR1 #杭州穿搭 #工厂直销女装 #好面料 #职场穿搭`,</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>`第一次来杭州 S1OR1，就被这里的面料惊到了</p>
+<p class="p2"><br></p>
+<p class="p1">以为是普通工厂店，结果进去发现全是好东西：真丝、桑蚕丝、醋酸、亚麻……每件上身的感觉完全不一样。问了价格更惊喜，桑蚕丝均价两百多，裤子百来块，工厂直销价格太香了。</p>
+<p class="p2"><br></p>
+<p class="p1">环境也很干净整洁，不像那种杂乱的批发档口。喜欢质感穿搭又不想花大价钱的姐妹，真的值得专程来逛。</p>
+<p class="p2"><br></p>
+<p class="p1">#杭州女装推荐 #工厂店 #S1OR1 #桑蚕丝 #平价穿搭`,</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>`杭州工厂直销女装真的可以！S1OR1 面料品质出乎意料</p>
+<p class="p2"><br></p>
+<p class="p1">逛完才知道他们家是做批发起家的，所以供应链很稳，面料选的全是好的：醋酸、亚麻、匹马棉、真丝，手感都特别好。</p>
+<p class="p2"><br></p>
+<p class="p1">关键是价格真的平，丝类上衣两三百、裤子一百多，职场日常穿完全够用，穿出来还有轻奢感。每天都有新款，选择很多。这种工厂店真的要多来几次！</p>
+<p class="p2"><br></p>
+<p class="p1">#杭州 #工厂直销 #S1OR1 #女装推荐 #通勤穿搭`,</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>`种草一家不太被人知道的工厂直销店，杭州 S1OR1</p>
+<p class="p2"><br></p>
+<p class="p1">主要做通勤休闲女装，特别的地方是面料很认真——桑蚕丝、醋酸、亚麻这些在这边都是正常价，不是噱头。价格是工厂直出的价，少了中间商那部分，真的能差出不少。</p>
+<p class="p2"><br></p>
+<p class="p1">版型也不含糊，30+穿非常合适，不会太年轻也不老气。已经回购好几次了，强烈推荐来实体逛！</p>
+<p class="p2"><br></p>
+<p class="p1">#S1OR1 #杭州女装 #工厂直销 #醋酸面料 #穿搭分享`</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">let curCopyIdx = -1;</p>
+<p class="p2"><br></p>
+<p class="p1">function shuffle(arr) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const a = [...arr];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>for (let i = a.length - 1; i &gt; 0; i--) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const j = Math.floor(Math.random() * (i + 1));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>[a[i], a[j]] = [a[j], a[i]];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return a;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function pickCopy(exclude) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let idx;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>do { idx = Math.floor(Math.random() * COPIES.length); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>while (COPIES.length &gt; 1 &amp;&amp; idx === exclude);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return idx;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function renderPhotos() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const grid = document.getElementById('photoGrid');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>shuffle(IMGS).slice(0, 3).forEach(src =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const img = document.createElement('img');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>img.src = src;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>img.alt = 'S1OR1展厅';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid.appendChild(img);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function renderCopy(idx) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const el = document.getElementById('copyText');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.innerText = COPIES[idx];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const len = COPIES[idx].replace(/\s/g, '').length;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('charCount').innerText = `当前字数：${len} 字（需 ≥ 50 字）`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const btn = document.getElementById('copyBtn');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btn.textContent = '复制文案';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btn.classList.remove('done');</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function refresh() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>curCopyIdx = pickCopy(curCopyIdx);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>renderCopy(curCopyIdx);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>renderPhotos();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function doCopy() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const t = document.getElementById('copyText').innerText;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const btn = document.getElementById('copyBtn');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const done = () =&gt; { btn.textContent = '✓ 已复制，去小红书粘贴'; btn.classList.add('done'); };</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (navigator.clipboard) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>navigator.clipboard.writeText(t).then(done).catch(() =&gt; fallbackCopy(t, done));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else { fallbackCopy(t, done); }</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function fallbackCopy(t, cb) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const el = document.createElement('textarea');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.value = t; el.style.position = 'fixed'; el.style.opacity = '0';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.body.appendChild(el); el.focus(); el.select();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>try { document.execCommand('copy'); cb(); } catch(e) {}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.body.removeChild(el);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function copyWX() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const btn = document.getElementById('wxBtn');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const done = () =&gt; { btn.textContent = '✓ 已复制'; btn.classList.add('done'); setTimeout(() =&gt; { btn.textContent = '复制微信号'; btn.classList.remove('done'); }, 2000); };</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (navigator.clipboard) { navigator.clipboard.writeText('s1or1-01').then(done); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>else { fallbackCopy('s1or1-01', done); }</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function openXHS() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>window.location.href = 'xhsdiscover://user/search?keyword=拓然服饰';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>setTimeout(() =&gt; { window.location.href = 'https://www.xiaohongshu.com/search_result?keyword=拓然服饰'; }, 800);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">curCopyIdx = pickCopy(-1);</p>
+<p class="p1">renderPhotos();</p>
+<p class="p1">renderCopy(curCopyIdx);</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>

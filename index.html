@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -92,11 +93,12 @@
   <div class="section-title">05 · 关注我们的小红书</div>
   <div class="xhs-block">
     <button class="xhs-btn" onclick="openXHS()"><span class="xhs-dot"></span>搜索「拓然服饰」关注我们</button>
+    <div style="font-size:11px;color:#aaa;margin-top:10px;">📍 杭州博大创业园 409</div>
     <div style="font-size:11px;color:#aaa;margin-top:10px;">每天上新 · 工厂直播 · 穿搭分享</div>
   </div>
 </div>
 
-<div class="footer">S1OR1 · 杭州工厂直销女装<br>每位顾客每次购物限享一次</div>
+<div class="footer">S1OR1 · 📍 杭州博大创业园 409<br>每位顾客每次购物限享一次</div>
 
 <script>
 const IMGS = [
@@ -210,14 +212,60 @@ function pickCopy(exclude) {
   return idx;
 }
 
+function processImage(src, idx) {
+  return new Promise(resolve => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+      const c = document.createElement('canvas');
+      const W = img.width, H = img.height;
+      const cp = 0.01 + Math.random() * 0.02;
+      const cx = Math.floor(W * cp), cy = Math.floor(H * cp);
+      c.width = W - cx * 2; c.height = H - cy * 2;
+      const ctx = c.getContext('2d');
+      ctx.drawImage(img, -cx, -cy);
+      const id = ctx.getImageData(0, 0, c.width, c.height);
+      const d = id.data;
+      const br = (Math.random() * 6 - 3) | 0;
+      const seed = Date.now() + idx * 1234;
+      for (let i = 0; i < d.length; i += 4) {
+        d[i]   = Math.min(255, Math.max(0, d[i]   + br));
+        d[i+1] = Math.min(255, Math.max(0, d[i+1] + br));
+        d[i+2] = Math.min(255, Math.max(0, d[i+2] + br));
+        if ((i / 4 + seed) % 97 === 0) {
+          const n = (Math.random() * 4 - 2) | 0;
+          d[i]   = Math.min(255, Math.max(0, d[i]   + n));
+          d[i+1] = Math.min(255, Math.max(0, d[i+1] + n));
+          d[i+2] = Math.min(255, Math.max(0, d[i+2] + n));
+        }
+      }
+      ctx.putImageData(id, 0, 0);
+      const fc = document.createElement('canvas');
+      fc.width = c.width; fc.height = c.height;
+      const fctx = fc.getContext('2d');
+      const angle = (Math.random() * 0.6 - 0.3) * Math.PI / 180;
+      fctx.translate(fc.width / 2, fc.height / 2);
+      fctx.rotate(angle);
+      fctx.drawImage(c, -c.width / 2, -c.height / 2);
+      resolve(fc.toDataURL('image/jpeg', 0.92));
+    };
+    img.onerror = () => resolve(src); // 跨域失败时降级用原图
+    img.src = src;
+  });
+}
+
 function renderPhotos() {
   const grid = document.getElementById('photoGrid');
-  grid.innerHTML = '';
-  shuffle(IMGS).slice(0, 3).forEach(src => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = 'S1OR1展厅';
-    grid.appendChild(img);
+  grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:16px;color:#aaa;font-size:12px">处理中...</div>';
+  const picked = shuffle([...IMGS]).slice(0, 3);
+  Promise.all(picked.map((src, i) => processImage(src, i))).then(results => {
+    grid.innerHTML = '';
+    results.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'S1OR1展厅';
+      grid.appendChild(img);
+    });
   });
 }
 

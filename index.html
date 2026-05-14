@@ -18,6 +18,8 @@
   .section-title { font-size:11px; color:#888; letter-spacing:3px; padding:16px 16px 8px; border-bottom:1px solid #f0f0f0; }
   .photos { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
   .photos img { width:100%; aspect-ratio:3/4; object-fit:cover; display:block; background:#eee; }
+  .photo-save { width:100%; padding:8px; background:#1a1a1a; color:#fff; border:none; font-size:12px; cursor:pointer; letter-spacing:1px; }
+  .photo-item { overflow:hidden; border-radius:4px; }
   .photo-hint { font-size:11px; color:#aaa; text-align:center; padding:10px; }
   .copy-block { padding:14px 16px; }
   .copy-text { font-size:14px; line-height:1.85; color:#333; background:#f8f7f4; border-radius:10px; padding:14px; border-left:3px solid #FF2442; white-space:pre-wrap; word-break:break-all; }
@@ -57,7 +59,7 @@
 <div class="section">
   <div class="section-title">01 · 长按保存这3张图</div>
   <div class="photos" id="photoGrid"></div>
-  <div class="photo-hint">长按图片 → 保存到相册 · 每次随机组合</div>
+  <div class="photo-hint">点击按钮保存高清图片 · 每次随机组合</div>
 </div>
 
 <div class="section">
@@ -119,6 +121,8 @@ const IMGS = [
   'https://i.ibb.co/Zpz7SywF/Wechat-IMG2136.jpg',
   'https://i.ibb.co/tTqddHhy/Wechat-IMG2137.jpg'
 ];
+
+const ADDR = '\n\n📍 杭州博大创业园 409 · S1OR1';
 
 const COPIES = [
   `在杭州逛到一家宝藏工厂店，S1OR1，完全不像这个价位的质感！
@@ -260,18 +264,28 @@ function renderPhotos() {
   const picked = shuffle([...IMGS]).slice(0, 3);
   Promise.all(picked.map((src, i) => processImage(src, i))).then(results => {
     grid.innerHTML = '';
-    results.forEach(src => {
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = 'S1OR1展厅';
-      grid.appendChild(img);
+    results.forEach((src, i) => {
+      const div = document.createElement('div');
+      div.className = 'photo-item';
+      div.innerHTML = `
+        <img src="${src}" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;">
+        <button class="photo-save" onclick="savePhoto('${src}', ${i+1})">⬇ 保存图${i+1}</button>
+      `;
+      grid.appendChild(div);
     });
   });
 }
 
+function savePhoto(src, idx) {
+  const a = document.createElement('a');
+  a.download = `s1or1_${idx}_${Date.now()}.jpg`;
+  a.href = src;
+  a.click();
+}
+
 function renderCopy(idx) {
   const el = document.getElementById('copyText');
-  el.innerText = COPIES[idx];
+  el.innerText = COPIES[idx] + ADDR;
   const len = COPIES[idx].replace(/\s/g, '').length;
   document.getElementById('charCount').innerText = `当前字数：${len} 字（需 ≥ 50 字）`;
   const btn = document.getElementById('copyBtn');
